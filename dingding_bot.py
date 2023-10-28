@@ -17,7 +17,7 @@ import requests
 '''
 def get_digest():
     timestamp = str(round(time() * 1000))
-    secret = '你的钉钉加签密钥'
+    secret = 'xxx'
     secret_enc = secret.encode('utf-8')
     string_to_sign = '{}\n{}'.format(timestamp, secret)
     string_to_sign_enc = string_to_sign.encode('utf-8')
@@ -44,8 +44,8 @@ def warning_bot(message, title):
         }
     }
     # 机器人链接地址，发post请求 向钉钉机器人传递指令
-    webhook_url = '你自己的钉钉机器人Webhook链接'
-    # 利用requests发送post请求
+    webhook_url = 'https://oapi.dingtalk.com/robot/send?access_token=xxx'
+    # 利用requests发送post请求lk
     req = requests.post(webhook_url+get_digest(), json=data)
     # print(req.status_code)
-    return
+    return req

@@ -1,7 +1,13 @@
 from apscheduler.schedulers.blocking import BlockingScheduler
-from data_detection import get_server_info, get_warning
+from data_detection import get_server_info, get_warning, start_info
 from dingding_bot import  warning_bot
 
+
+def start_info_once():
+    message = start_info()
+    title = '服务器消息'
+    # 发消息
+    warning_bot(message, title)
 
 
 '''
@@ -23,12 +29,8 @@ def every_seconds_30():
         title = '【⚠️警告】服务器故障'
         warning_bot(warning, title)
 
-'''
-3、@机器人，自动问答设置
-下一篇安排，需要另外新建一个企业机器人
-和群聊机器人流程不一样～
-'''
-    
+start_info_once()
+
 # 选择BlockingScheduler调度器，应用程序可以后台静默运行
 sched = BlockingScheduler(timezone='Asia/Shanghai')
 

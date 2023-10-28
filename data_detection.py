@@ -7,6 +7,9 @@ from datetime import timedelta
 系统数据获取和预警设置模块
 '''
 
+def start_info():
+    return "服务器已启动，开始监控..."
+
 
 '''
 云服务器基础数据
@@ -32,7 +35,6 @@ def get_server_info():
     
     base_info = f"""### 服务器基本信息
 > 您的云服务器已运行-{run_times}，机器负载情况为(最近1、5、15分钟)：{loadavg}
-![](https://img-blog.csdnimg.cn/246a90c55c4e46dca089731c5fd00833.png)
 - 目前CPU使用率为：{cpu_in_use}%，
 - 系统运行内存使用率为：{vm_in_use}%，
 - 剩余可用运行内存为：{vm_available}GiB，
@@ -54,10 +56,10 @@ def get_warning():
     loadavg_max = psu.cpu_count() * 0.7
     loadavg_max = 0.01   # 测试使用，正式环境请注释掉
     if loadavg[0] >= loadavg_max and loadavg[2] >= loadavg_max:
-        warning1 = f'⚠️<font color="#d30c0c">【警告】</font>您的云服务器当前负载率为(最近1、5、15分钟)-{loadavg}，负载率已达<font color="#d30c0c">{round(loadavg[2]/loadavg_max, 2)*100}%</font>，请及时检查系统是否存在问题，也可以@我，发送：基础信息，查看云服务器基础信息。'
+        warning1 = f'⚠️<font color="#d30c0c">【警告】</font>您的云服务器当前负载率为(最近1、5、15分钟)-{loadavg}，负载率已达<font color="#d30c0c">{round(loadavg[2]/loadavg_max, 2)*100}%</font>，请及时检查系统是否存在问题。'
         return warning1
-        
+
     if cpu_in_use >= 80:
-        warning2 = f'⚠️<font color="#d30c0c">【警告】</font>您的云服务器当前CPU使用率为<font color="#d30c0c">{cpu_in_use}%</font>，请及时检查系统是否存在问题，也可以@我，发送：基础信息，查看云服务器基础信息。'
+        warning2 = f'⚠️<font color="#d30c0c">【警告】</font>您的云服务器当前CPU使用率为<font color="#d30c0c">{cpu_in_use}%</font>，请及时检查系统是否存在问题。'
         return warning2
     return 'ok'
