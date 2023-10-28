@@ -1,0 +1,12 @@
+[Unit]
+Description=Dingding Bot service
+
+[Service]
+Type=forking
+ExecStart=/bin/bash -c "/usr/bin/python3 /home/software/ServerWatcher-DingBot/scheduler.py &"
+KillMode=process
+Restart=on-failure
+RestartSec=3s
+
+[Install]
+WantedBy=multi-user.target

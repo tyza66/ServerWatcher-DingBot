@@ -54,7 +54,7 @@ def get_warning():
     # 首先判断服务器负载情况
     # 只看近一分钟和近十五分钟情况 应该<= 0.7*CPU数量
     loadavg_max = psu.cpu_count() * 0.7
-    loadavg_max = 0.01   # 测试使用，正式环境请注释掉
+    #loadavg_max = 0.01   # 测试使用，正式环境请注释掉
     if loadavg[0] >= loadavg_max and loadavg[2] >= loadavg_max:
         warning1 = f'⚠️<font color="#d30c0c">【警告】</font>您的云服务器当前负载率为(最近1、5、15分钟)-{loadavg}，负载率已达<font color="#d30c0c">{round(loadavg[2]/loadavg_max, 2)*100}%</font>，请及时检查系统是否存在问题。'
         return warning1
