@@ -91,7 +91,7 @@ systemctl restart ding_bot
 systemctl stop ding_bot
 ```
 
-Fork From：[老表](https://python-brief.com)（XksA-me）
+Fork From：[老表](https://python-brief.com)（XksA-me）  
 Change By：tyza66
 
 
