@@ -1,10 +1,10 @@
 - [使用方法](#使用方法)
-  * [下载项目文件](#下载项目文件)
-  * [安装项目依赖第三方库](#安装项目依赖第三方库)
-  * [修改钉钉加签密钥和机器人Webhook链接](#修改钉钉加签密钥和机器人Webhook链接)
-  * [运行代码](#运行代码)
-  * [运行效果](#运行效果)
-  * [创建守护进程](#创建守护进程)
+  - [下载项目文件](#下载项目文件)
+  - [安装项目依赖第三方库](#安装项目依赖第三方库)
+  - [修改钉钉加签密钥和机器人Webhook链接](#修改钉钉加签密钥和机器人webhook链接)
+  - [运行代码](#运行代码)
+  - [运行效果](#运行效果)
+  - [创建守护进程](#创建守护进程)
 
 
 <img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1d802d52dfd147768c1cf687009afd02~tplv-k3u1fbpfcp-zoom-1.image" width=70%/>
@@ -65,7 +65,7 @@ Description=Dingding Bot service
 
 [Service]
 Type=forking
-ExecStart=/usr/bin/python3 /root/Project/Little_project/DingdingBot/scheduler.py
+ExecStart=/bin/bash -c "/usr/bin/python3 /home/software/ServerWatcher-DingBot/scheduler.py &"
 KillMode=process
 Restart=on-failure
 RestartSec=3s
@@ -91,15 +91,8 @@ systemctl restart ding_bot
 systemctl stop ding_bot
 ```
 
-关于守护进程system其他的相关指令和操作可以自行搜查哈，也可以留言区交流，展开讲又是一篇推文啦～
+Fork From：[老表](https://python-brief.com)（XksA-me）
+Change By：tyza66
 
-
-本项目完整教程：[如何用Python发送告警通知到钉钉？](https://mp.weixin.qq.com/s/mGUlrx3AmMZkIxhvnqX0vQ)
-
-我的个人网站：[https://python-brief.com](https://python-brief.com)
-
-我是老表，爱猫爱技术。
-
-<img src="https://img-blog.csdnimg.cn/8af3813e46174c57bc7d4a4e0c77f195.png" width=70%/>
 
 
