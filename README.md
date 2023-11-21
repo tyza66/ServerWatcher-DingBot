@@ -17,12 +17,9 @@
 ### 下载项目文件
 ```bash
 # ssh下载
-git clone git@github.com:XksA-me/DingdingBot.git
+git clone git@github.com:tyza66/ServerWatcher-DingBot.git
 # https下载
-git clone  https://github.com/XksA-me/DingdingBot.git
-# 如果不行可以尝试下面的加速下载地址
-# ssh加速地址：git clone git@git.zhlh6.cn:XksA-me/DingdingBot.git
-# https加速地址：git clone https://github.com.cnpmjs.org/XksA-me/DingdingBot.git
+git clone https://github.com/tyza66/ServerWatcher-DingBot.git
 ```
 
 ### 安装项目依赖第三方库
