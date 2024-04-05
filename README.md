@@ -88,6 +88,9 @@ systemctl restart ding_bot
 systemctl stop ding_bot
 ```
 
+### 新维护版本
+- https://github.com/MutantCat-Working-Group/Echoes
+
 Fork From：[老表](https://python-brief.com)（XksA-me）  
 Change By：tyza66
 
